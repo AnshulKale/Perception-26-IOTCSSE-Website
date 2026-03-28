@@ -338,6 +338,9 @@
         document.getElementById('cricket-hud').classList.add('active');
         document.getElementById('cricket-game-over').classList.remove('show');
         bindControls();
+        // ADD THIS inside game-cricket.js _init():
+        const visualBox = document.getElementById('sec-cricket').querySelector('.ev-visual');
+        window.scrollTo({ top: visualBox.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
         running = true;
         lastTs = performance.now();
         frameId = requestAnimationFrame(loop);

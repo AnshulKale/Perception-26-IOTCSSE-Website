@@ -1,331 +1,449 @@
-* ═══════════════════════════════════════════════════════
-       GAME SYSTEM — CSS
-    ═══════════════════════════════════════════════════════ */
+* ═══════════════════════════════════════════════════════ GAME SYSTEM — CSS ═══════════════════════════════════════════════════════ */
 
-    /* Game wrapper — fills the entire ev-visual */
-    .game-wrap {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      overflow: hidden;
+/* Game wrapper — fills the entire ev-visual */
+.game-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* Intro screen shown before game starts */
+.game-intro-screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: opacity 0.4s, visibility 0.4s;
+}
+
+.game-intro-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Floating UI card on intro */
+.game-card {
+    position: relative;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.6rem 2rem;
+    border-radius: 6px;
+    backdrop-filter: blur(16px);
+}
+
+.horror-card {
+    background: rgba(3, 3, 10, 0.88);
+    border: 1px solid rgba(255, 0, 85, 0.28);
+    box-shadow: 0 0 40px rgba(255, 0, 85, 0.08), inset 0 0 30px rgba(255, 0, 85, 0.04);
+}
+
+.cricket-card {
+    background: rgba(1, 10, 4, 0.88);
+    border: 1px solid rgba(0, 255, 157, 0.25);
+    box-shadow: 0 0 40px rgba(0, 255, 157, 0.08), inset 0 0 30px rgba(0, 255, 157, 0.04);
+}
+
+.game-card-eyebrow {
+    font-size: 0.58rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+}
+
+.horror-card .game-card-eyebrow {
+    color: rgba(255, 0, 85, 0.55)
+}
+
+.cricket-card .game-card-eyebrow {
+    color: rgba(0, 255, 157, 0.55)
+}
+
+/* Name input */
+.game-name-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    padding: 0.65rem 1rem;
+    border-radius: 3px;
+    width: 190px;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.game-name-input::placeholder {
+    color: rgba(255, 255, 255, 0.25)
+}
+
+.horror-name-input:focus {
+    border-color: rgba(255, 0, 85, 0.6);
+    box-shadow: 0 0 12px rgba(255, 0, 85, 0.2)
+}
+
+.cricket-name-input:focus {
+    border-color: rgba(0, 255, 157, 0.6);
+    box-shadow: 0 0 12px rgba(0, 255, 157, 0.2)
+}
+
+/* Start button */
+.game-start-btn {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.22em;
+    padding: 0.65rem 2rem;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    width: 190px;
+}
+
+.game-start-btn:hover {
+    transform: scale(1.04)
+}
+
+.game-start-btn:active {
+    transform: scale(0.97)
+}
+
+.horror-start-btn {
+    background: linear-gradient(135deg, rgba(255, 0, 55, 0.9), rgba(180, 0, 60, 0.9));
+    color: #fff;
+    box-shadow: 0 0 24px rgba(255, 0, 85, 0.5), 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.horror-start-btn:hover {
+    box-shadow: 0 0 35px rgba(255, 0, 85, 0.8), 0 0 70px rgba(255, 0, 85, 0.25)
+}
+
+.cricket-start-btn {
+    background: linear-gradient(135deg, rgba(0, 220, 140, 0.9), rgba(0, 160, 100, 0.9));
+    color: #001a0d;
+    box-shadow: 0 0 24px rgba(0, 255, 157, 0.45), 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.cricket-start-btn:hover {
+    box-shadow: 0 0 35px rgba(0, 255, 157, 0.8)
+}
+
+.game-hint-text {
+    font-size: 0.56rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.18);
+    text-align: center;
+}
+
+/* Game canvas — fills ev-visual when active */
+.game-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    display: none;
+    z-index: 4;
+}
+
+.game-canvas.active {
+    display: block;
+    touch-action: none;
+}
+
+/* HUD overlay */
+.game-hud {
+    position: absolute;
+    top: 0.8rem;
+    left: 0;
+    right: 0;
+    display: none;
+    justify-content: space-between;
+    padding: 0 0.8rem;
+    z-index: 10;
+    pointer-events: none;
+    gap: 0.4rem;
+}
+
+.game-hud.active {
+    display: flex
+}
+
+.hud-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    padding: 0.28rem 0.7rem;
+    border-radius: 3px;
+    backdrop-filter: blur(10px);
+}
+
+.horror-hud .hud-item {
+    color: var(--horror-g);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 0, 85, 0.3);
+    text-shadow: 0 0 10px rgba(255, 0, 85, 0.9);
+}
+
+.cricket-hud .hud-item {
+    color: var(--cricket-g);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 255, 157, 0.3);
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.9);
+}
+
+/* Game over / win screen */
+.game-over-screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.88);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.game-over-screen.show {
+    opacity: 1;
+    visibility: visible
+}
+
+.go-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 2rem 2.5rem;
+    border-radius: 6px;
+    backdrop-filter: blur(20px);
+    text-align: center;
+    animation: goReveal 0.5s var(--ease-out-expo) both;
+}
+
+@keyframes goReveal {
+    from {
+        transform: translateY(30px) scale(0.94);
+        opacity: 0
     }
 
-    /* Intro screen shown before game starts */
-    .game-intro-screen {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 5;
-      transition: opacity 0.4s, visibility 0.4s;
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1
     }
+}
 
-    .game-intro-screen.hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
+.horror-go-card {
+    background: rgba(15, 0, 8, 0.92);
+    border: 1px solid rgba(255, 0, 85, 0.35);
+    box-shadow: 0 0 50px rgba(255, 0, 85, 0.15), inset 0 0 40px rgba(255, 0, 85, 0.05);
+}
 
-    /* Floating UI card on intro */
-    .game-card {
-      position: relative;
-      z-index: 6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.85rem;
-      padding: 1.6rem 2rem;
-      border-radius: 6px;
-      backdrop-filter: blur(16px);
-    }
+.cricket-go-card {
+    background: rgba(0, 10, 5, 0.92);
+    border: 1px solid rgba(0, 255, 157, 0.35);
+    box-shadow: 0 0 50px rgba(0, 255, 157, 0.15), inset 0 0 40px rgba(0, 255, 157, 0.05);
+}
 
-    .horror-card {
-      background: rgba(3, 3, 10, 0.88);
-      border: 1px solid rgba(255, 0, 85, 0.28);
-      box-shadow: 0 0 40px rgba(255, 0, 85, 0.08), inset 0 0 30px rgba(255, 0, 85, 0.04);
-    }
+.go-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    letter-spacing: 0.1em;
+}
 
-    .cricket-card {
-      background: rgba(1, 10, 4, 0.88);
-      border: 1px solid rgba(0, 255, 157, 0.25);
-      box-shadow: 0 0 40px rgba(0, 255, 157, 0.08), inset 0 0 30px rgba(0, 255, 157, 0.04);
-    }
+.horror-go-card .go-title {
+    color: var(--horror-g);
+    text-shadow: var(--horror-glow-sm)
+}
 
-    .game-card-eyebrow {
-      font-size: 0.58rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-    }
+.cricket-go-card .go-title {
+    color: var(--cricket-g);
+    text-shadow: var(--cricket-glow-sm)
+}
 
-    .horror-card .game-card-eyebrow { color: rgba(255, 0, 85, 0.55) }
-    .cricket-card .game-card-eyebrow { color: rgba(0, 255, 157, 0.55) }
+.go-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted)
+}
 
-    /* Name input */
-    .game-name-input {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: var(--white);
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
-      padding: 0.65rem 1rem;
-      border-radius: 3px;
-      width: 190px;
-      text-align: center;
-      outline: none;
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
+.go-score-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--white);
+}
 
-    .game-name-input::placeholder { color: rgba(255,255,255,0.25) }
-    .horror-name-input:focus { border-color: rgba(255, 0, 85, 0.6); box-shadow: 0 0 12px rgba(255, 0, 85, 0.2) }
-    .cricket-name-input:focus { border-color: rgba(0, 255, 157, 0.6); box-shadow: 0 0 12px rgba(0, 255, 157, 0.2) }
+.go-sub {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.12em
+}
 
-    /* Start button */
-    .game-start-btn {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.15rem;
-      letter-spacing: 0.22em;
-      padding: 0.65rem 2rem;
-      border-radius: 3px;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.3s;
-      width: 190px;
-    }
+.go-retry-btn {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.22em;
+    padding: 0.6rem 1.6rem;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 0.4rem;
+    transition: all 0.3s;
+}
 
-    .game-start-btn:hover { transform: scale(1.04) }
-    .game-start-btn:active { transform: scale(0.97) }
+.horror-retry-btn {
+    background: rgba(255, 0, 85, 0.12);
+    color: var(--horror-g);
+    border: 1px solid rgba(255, 0, 85, 0.4);
+}
 
-    .horror-start-btn {
-      background: linear-gradient(135deg, rgba(255, 0, 55, 0.9), rgba(180, 0, 60, 0.9));
-      color: #fff;
-      box-shadow: 0 0 24px rgba(255, 0, 85, 0.5), 0 4px 15px rgba(0,0,0,0.4);
-    }
+.horror-retry-btn:hover {
+    background: rgba(255, 0, 85, 0.28);
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.4)
+}
 
-    .horror-start-btn:hover { box-shadow: 0 0 35px rgba(255, 0, 85, 0.8), 0 0 70px rgba(255, 0, 85, 0.25) }
+.cricket-retry-btn {
+    background: rgba(0, 255, 157, 0.1);
+    color: var(--cricket-g);
+    border: 1px solid rgba(0, 255, 157, 0.4);
+}
 
-    .cricket-start-btn {
-      background: linear-gradient(135deg, rgba(0, 220, 140, 0.9), rgba(0, 160, 100, 0.9));
-      color: #001a0d;
-      box-shadow: 0 0 24px rgba(0, 255, 157, 0.45), 0 4px 15px rgba(0,0,0,0.4);
-    }
+.cricket-retry-btn:hover {
+    background: rgba(0, 255, 157, 0.22);
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.4)
+}
 
-    .cricket-start-btn:hover { box-shadow: 0 0 35px rgba(0, 255, 157, 0.8) }
+/* Virtual Joystick (mobile horror) */
+.joy-zone {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 140px;
+    height: 140px;
+    z-index: 15;
+    display: none;
+    touch-action: none;
+}
 
-    .game-hint-text {
-      font-size: 0.56rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.18);
-      text-align: center;
-    }
-
-    /* Game canvas — fills ev-visual when active */
-    .game-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100% !important;
-      height: 100% !important;
-      display: none;
-      z-index: 4;
-    }
-
-    .game-canvas.active { display: block }
-
-    /* HUD overlay */
-    .game-hud {
-      position: absolute;
-      top: 0.8rem;
-      left: 0;
-      right: 0;
-      display: none;
-      justify-content: space-between;
-      padding: 0 0.8rem;
-      z-index: 10;
-      pointer-events: none;
-      gap: 0.4rem;
-    }
-
-    .game-hud.active { display: flex }
-
-    .hud-item {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-      padding: 0.28rem 0.7rem;
-      border-radius: 3px;
-      backdrop-filter: blur(10px);
-    }
-
-    .horror-hud .hud-item {
-      color: var(--horror-g);
-      background: rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(255, 0, 85, 0.3);
-      text-shadow: 0 0 10px rgba(255, 0, 85, 0.9);
-    }
-
-    .cricket-hud .hud-item {
-      color: var(--cricket-g);
-      background: rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(0, 255, 157, 0.3);
-      text-shadow: 0 0 10px rgba(0, 255, 157, 0.9);
-    }
-
-    /* Game over / win screen */
-    .game-over-screen {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 20;
-      background: rgba(0, 0, 0, 0.88);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s, visibility 0.5s;
-    }
-
-    .game-over-screen.show { opacity: 1; visibility: visible }
-
-    .go-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.9rem;
-      padding: 2rem 2.5rem;
-      border-radius: 6px;
-      backdrop-filter: blur(20px);
-      text-align: center;
-      animation: goReveal 0.5s var(--ease-out-expo) both;
-    }
-
-    @keyframes goReveal {
-      from { transform: translateY(30px) scale(0.94); opacity: 0 }
-      to { transform: translateY(0) scale(1); opacity: 1 }
-    }
-
-    .horror-go-card {
-      background: rgba(15, 0, 8, 0.92);
-      border: 1px solid rgba(255, 0, 85, 0.35);
-      box-shadow: 0 0 50px rgba(255, 0, 85, 0.15), inset 0 0 40px rgba(255, 0, 85, 0.05);
-    }
-
-    .cricket-go-card {
-      background: rgba(0, 10, 5, 0.92);
-      border: 1px solid rgba(0, 255, 157, 0.35);
-      box-shadow: 0 0 50px rgba(0, 255, 157, 0.15), inset 0 0 40px rgba(0, 255, 157, 0.05);
-    }
-
-    .go-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.4rem;
-      letter-spacing: 0.1em;
-    }
-
-    .horror-go-card .go-title { color: var(--horror-g); text-shadow: var(--horror-glow-sm) }
-    .cricket-go-card .go-title { color: var(--cricket-g); text-shadow: var(--cricket-glow-sm) }
-
-    .go-label { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted) }
-
-    .go-score-val {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3.5rem;
-      letter-spacing: -0.02em;
-      line-height: 1;
-      color: var(--white);
-    }
-
-    .go-sub { font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 0.12em }
-
-    .go-retry-btn {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.05rem;
-      letter-spacing: 0.22em;
-      padding: 0.6rem 1.6rem;
-      border-radius: 3px;
-      cursor: pointer;
-      margin-top: 0.4rem;
-      transition: all 0.3s;
-    }
-
-    .horror-retry-btn {
-      background: rgba(255, 0, 85, 0.12);
-      color: var(--horror-g);
-      border: 1px solid rgba(255, 0, 85, 0.4);
-    }
-
-    .horror-retry-btn:hover { background: rgba(255, 0, 85, 0.28); box-shadow: 0 0 20px rgba(255, 0, 85, 0.4) }
-
-    .cricket-retry-btn {
-      background: rgba(0, 255, 157, 0.1);
-      color: var(--cricket-g);
-      border: 1px solid rgba(0, 255, 157, 0.4);
-    }
-
-    .cricket-retry-btn:hover { background: rgba(0, 255, 157, 0.22); box-shadow: 0 0 20px rgba(0, 255, 157, 0.4) }
-
-    /* Virtual Joystick (mobile horror) */
+@media(pointer:coarse) {
     .joy-zone {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 140px;
-      height: 140px;
-      z-index: 15;
-      display: none;
-      touch-action: none;
+        display: block
     }
+}
 
-    @media(pointer:coarse) { .joy-zone { display: block } }
+.joy-base {
+    position: absolute;
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background: rgba(255, 0, 85, 0.07);
+    border: 2px solid rgba(255, 0, 85, 0.28);
+    bottom: 16px;
+    left: 16px;
+}
 
-    .joy-base {
-      position: absolute;
-      width: 86px;
-      height: 86px;
-      border-radius: 50%;
-      background: rgba(255, 0, 85, 0.07);
-      border: 2px solid rgba(255, 0, 85, 0.28);
-      bottom: 16px;
-      left: 16px;
-    }
+.joy-knob {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 0, 85, 0.45);
+    border: 2px solid rgba(255, 0, 85, 0.75);
+    box-shadow: 0 0 14px rgba(255, 0, 85, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: transform 0.05s linear;
+}
 
-    .joy-knob {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(255, 0, 85, 0.45);
-      border: 2px solid rgba(255, 0, 85, 0.75);
-      box-shadow: 0 0 14px rgba(255, 0, 85, 0.5);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      transition: transform 0.05s linear;
-    }
+/* Cricket swing hint button (mobile) */
+.cricket-tap-btn {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+    display: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    padding: 0.7rem 2rem;
+    border-radius: 50px;
+    background: rgba(0, 255, 157, 0.12);
+    color: var(--cricket-g);
+    border: 1px solid rgba(0, 255, 157, 0.4);
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
+    cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
+}
 
-    /* Cricket swing hint button (mobile) */
+@media(pointer:coarse) {
     .cricket-tap-btn {
-      position: absolute;
-      bottom: 1.2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 15;
-      display: none;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.2em;
-      padding: 0.7rem 2rem;
-      border-radius: 50px;
-      background: rgba(0, 255, 157, 0.12);
-      color: var(--cricket-g);
-      border: 1px solid rgba(0, 255, 157, 0.4);
-      box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
-      cursor: pointer;
-      touch-action: manipulation;
-      user-select: none;
+        display: block
+    }
+}
+
+/* ── HORROR VR TEASER ── */
+.horror-teaser {
+    margin: 1.2rem 0 0.5rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 0, 85, 0.05);
+    border: 1px dashed rgba(255, 0, 85, 0.4);
+    border-radius: 4px;
+    max-width: 290px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle scanline effect sweeping across the warning */
+.horror-teaser::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 85, 0.1), transparent);
+    animation: teaserScan 3s linear infinite;
+}
+
+@keyframes teaserScan {
+    0% {
+        left: -100%;
     }
 
-    @media(pointer:coarse) { .cricket-tap-btn { display: block } }
+    100% {
+        left: 200%;
+    }
+}
+
+.horror-teaser h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.15em;
+    color: var(--horror-g);
+    margin-bottom: 0.4rem;
+    text-shadow: 0 0 10px rgba(255, 0, 85, 0.6);
+}
+
+.horror-teaser p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: rgba(244, 244, 240, 0.65);
+}

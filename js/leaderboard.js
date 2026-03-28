@@ -5,13 +5,15 @@
 // 1. Initialize Supabase (Paste your URL and Key here)
 const supabaseUrl = 'https://rwwsluvuqbszokkgxrxp.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ3d3NsdXZ1cWJzem9ra2d4cnhwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2NzI5NDUsImV4cCI6MjA5MDI0ODk0NX0.2b_j-DNAnuSJJ3dQOHxADzHF_wKzE_nx3ABsb02hG7g';
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+// CHANGED: Renamed to supabaseClient to avoid conflict with the CDN
+const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 const LB = {
   // Fetch top 10 scores for a specific game
   async get(type) {
     try {
-      const { data, error } = await supabase
+      const { data, error } = await supabaseClient
         .from('leaderboard')
         .select('*')
         .eq('game_type', type)
@@ -30,7 +32,7 @@ const LB = {
   async add(type, name, score) {
     const trimmedName = (name || 'Anonymous').trim().substring(0, 18);
     try {
-      await supabase
+      await supabaseClient
         .from('leaderboard')
         .insert([{ game_type: type, name: trimmedName, score: score }]);
       

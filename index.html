@@ -133,14 +133,22 @@
 
                 <!-- Game Over / Win Screen -->
                 <div id="horror-game-over" class="game-over-screen">
-                    <div class="go-card horror-go-card">
-                        <div class="go-title" id="horror-go-title">GAME OVER</div>
-                        <div class="go-label">Score</div>
-                        <div class="go-score-val" id="horror-go-score">0</div>
-                        <div class="go-sub" id="horror-go-sub">0 keys · 0s survived</div>
-                        <button class="go-retry-btn horror-retry-btn" onclick="HorrorGame.restart()">↺ TRY
-                            AGAIN</button>
+                <div class="go-card horror-go-card">
+                    <div class="go-title" id="horror-go-title">GAME OVER</div>
+                    <div class="go-label">Score</div>
+                    <div class="go-score-val" id="horror-go-score">0</div>
+                    <div class="go-sub" id="horror-go-sub">0 keys · 0s survived</div>
+                    
+                    <div class="horror-teaser">
+                    <h4>⚠️ SYSTEM WARNING</h4>
+                    <p>This wasn’t the game.
+It was a warning.
+
+In Lights Out, you won’t be watching the darkness…
+you’ll be inside it.</p>
                     </div>
+                    <button class="go-retry-btn horror-retry-btn" onclick="HorrorGame.restart()">↺ TRY AGAIN</button>
+                </div>
                 </div>
 
                 <!-- Virtual Joystick (mobile only) -->

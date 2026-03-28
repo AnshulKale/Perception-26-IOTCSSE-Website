@@ -267,5 +267,19 @@
 }
 
 @media(max-width:900px) {
-  .ev-lb { display: none; }
+  /* Keep it visible, but shrink it and push it below the HUD */
+  .ev-lb { 
+    display: block; 
+    transform: scale(0.7);
+    transform-origin: top right;
+    top: 3.5rem; /* Safely below the in-game timer */
+    right: 0.5rem;
+    opacity: 0.5; /* Semi-transparent so it doesn't block gameplay */
+    transition: opacity 0.3s;
+  }
+
+  /* Fade it out even more if the player's finger gets near it */
+  .ev-lb:active {
+    opacity: 0.1;
+  }
 }
