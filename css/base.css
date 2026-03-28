@@ -1,0 +1,70 @@
+* ─────────────────────────────────────────
+   RESET & ROOT
+───────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    :root {
+      --black: #03030a;
+      --white: #f0f0ff;
+      --muted: #5a5a7a;
+
+      /* NEON HORROR — hot magenta-red */
+      --horror-r: #ff0055;
+      --horror-g: #ff2d6e;
+      --horror-dim: rgba(255, 0, 85, 0.18);
+      --horror-glow: 0 0 18px rgba(255, 0, 85, 0.8), 0 0 50px rgba(255, 0, 85, 0.35), 0 0 100px rgba(255, 0, 85, 0.15);
+      --horror-glow-sm: 0 0 10px rgba(255, 0, 85, 0.7), 0 0 30px rgba(255, 0, 85, 0.3);
+
+      /* NEON CRICKET — electric lime-green */
+      --cricket-r: #00ff9d;
+      --cricket-g: #00ffb3;
+      --cricket-dim: rgba(0, 255, 157, 0.15);
+      --cricket-glow: 0 0 18px rgba(0, 255, 157, 0.8), 0 0 50px rgba(0, 255, 157, 0.35), 0 0 100px rgba(0, 255, 157, 0.15);
+      --cricket-glow-sm: 0 0 10px rgba(0, 255, 157, 0.7), 0 0 30px rgba(0, 255, 157, 0.3);
+
+      /* NEON TECH — electric cyan-blue */
+      --tech-r: #00d4ff;
+      --tech-g: #00eeff;
+      --tech-dim: rgba(0, 212, 255, 0.15);
+      --tech-glow: 0 0 18px rgba(0, 212, 255, 0.8), 0 0 50px rgba(0, 212, 255, 0.35), 0 0 100px rgba(0, 212, 255, 0.15);
+      --tech-glow-sm: 0 0 10px rgba(0, 212, 255, 0.7), 0 0 30px rgba(0, 212, 255, 0.3);
+
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+    }
+
+    html {
+      scroll-behavior: auto;
+      font-size: 16px
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 40% 30% at 0% 0%, rgba(255, 0, 85, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 100% 50%, rgba(0, 255, 157, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 50% 100%, rgba(0, 212, 255, 0.04) 0%, transparent 70%);
+    }
+
+    ::selection {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--white)
+    }

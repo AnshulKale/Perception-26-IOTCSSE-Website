@@ -1,0 +1,110 @@
+* ─────────────────────────────────────────
+   CUSTOM CURSOR
+───────────────────────────────────────── */
+    #cursor {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--white);
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s, width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), background 0.3s;
+      mix-blend-mode: difference;
+    }
+
+    #cursor-ring {
+      position: fixed;
+      z-index: 9998;
+      pointer-events: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      transform: translate(-50%, -50%);
+      transition: transform 0.18s var(--ease-out-expo), width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), border-color 0.3s, opacity 0.3s;
+    }
+
+    body.hovering #cursor { width: 6px; height: 6px }
+    body.hovering #cursor-ring { width: 60px; height: 60px; border-color: rgba(255, 255, 255, 0.7) }
+    body.clicking #cursor { transform: translate(-50%, -50%) scale(0.6) }
+
+    @media(pointer:coarse) {
+      #cursor, #cursor-ring { display: none }
+      body { cursor: auto }
+    }
+
+    /* ─────────────────────────────────────────
+   PAGE TRANSITION OVERLAY
+───────────────────────────────────────── */
+    #page-transition {
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      pointer-events: none;
+    }
+
+    .pt-panel {
+      background: var(--black);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.6s var(--ease-in-out);
+    }
+
+    .pt-panel:nth-child(2) { transition-delay: 0.05s }
+    .pt-panel:nth-child(3) { transition-delay: 0.1s }
+
+    #page-transition.enter .pt-panel { transform: scaleY(1); transform-origin: bottom }
+    #page-transition.exit .pt-panel { transform: scaleY(0); transform-origin: top }
+
+    /* ─────────────────────────────────────────
+   LOADER
+───────────────────────────────────────── */
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 8000;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .loader-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 6vw, 4rem);
+      letter-spacing: 0.3em;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .loader-text span {
+      display: inline-block;
+      animation: loaderReveal 0.8s var(--ease-out-expo) both;
+    }
+
+    .loader-progress {
+      width: 200px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .loader-progress-bar {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--horror-r), var(--cricket-g), var(--tech-g));
+      box-shadow: 0 0 14px rgba(0, 255, 157, 0.7), 0 0 40px rgba(0, 212, 255, 0.4);
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: loaderBar 1.4s var(--ease-out-expo) 0.2s both;
+    }
+
+    @keyframes loaderReveal { from { transform: translateY(100%) } to { transform: translateY(0) } }
+    @keyframes loaderBar { from { transform: scaleX(0) } to { transform: scaleX(1) } }

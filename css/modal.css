@@ -1,0 +1,210 @@
+* ─────────────────────────────────────────
+   SCROLL REVEAL
+───────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo) }
+    .reveal.revealed { opacity: 1; transform: translateY(0) }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo) }
+    .reveal-left.revealed { opacity: 1; transform: translateX(0) }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo) }
+    .reveal-right.revealed { opacity: 1; transform: translateX(0) }
+
+    /* ─────────────────────────────────────────
+   EVENT DETAIL MODAL
+───────────────────────────────────────── */
+    #event-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 800;
+      background: var(--black);
+      overflow-y: auto;
+      transform: translateY(100%);
+      transition: transform 0.7s var(--ease-in-out);
+    }
+
+    #event-modal.open { transform: translateY(0) }
+
+    .modal-close {
+      position: fixed;
+      top: 2rem;
+      right: 2.5rem;
+      z-index: 810;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(244, 244, 240, 0.4);
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover { color: var(--white) }
+    .modal-close svg { width: 16px; height: 16px }
+
+    .modal-hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 8rem 2rem 5rem;
+    }
+
+    .modal-bg { position: absolute; inset: 0; transition: none }
+
+    .modal-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 12vw, 10rem);
+      line-height: 0.88;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      position: relative;
+      z-index: 2;
+      animation: revealUp 0.8s var(--ease-out-expo) 0.1s both;
+    }
+
+    .modal-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.4rem 1.2rem;
+      border-radius: 2px;
+      color: rgba(244, 244, 240, 0.5);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+      animation: revealUp 0.8s var(--ease-out-expo) 0s both;
+    }
+
+    .modal-subtitle {
+      font-size: 0.95rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(244, 244, 240, 0.35);
+      margin-top: 1.2rem;
+      position: relative;
+      z-index: 2;
+      animation: revealUp 0.8s var(--ease-out-expo) 0.2s both;
+    }
+
+    .modal-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 2.5rem;
+      position: relative;
+      z-index: 2;
+      animation: revealUp 0.8s var(--ease-out-expo) 0.3s both;
+    }
+
+    .modal-cta-row { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center }
+    .modal-vierp-note { font-size: 0.68rem; color: rgba(244, 244, 240, 0.25) }
+
+    .modal-carousel-wrap { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem 2rem }
+
+    .carousel-label { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem }
+
+    .carousel { position: relative; overflow: hidden; border-radius: 4px; background: #000 }
+    .carousel-track { display: flex; transition: transform 0.6s var(--ease-out-expo) }
+
+    .carousel-slide { min-width: 100%; aspect-ratio: 16/6; display: flex; align-items: center; justify-content: center; flex-shrink: 0 }
+
+    .slide-placeholder { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; border: 1px dashed rgba(255, 255, 255, 0.07); width: 100%; height: 100%; justify-content: center }
+    .slide-placeholder svg { width: 28px; height: 28px; opacity: 0.12 }
+    .slide-placeholder span { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255, 255, 255, 0.15) }
+
+    .carousel-nav { display: flex; align-items: center; justify-content: space-between; margin-top: 1.2rem }
+    .carousel-dots { display: flex; gap: 0.5rem }
+
+    .c-dot { width: 24px; height: 2px; border-radius: 1px; background: rgba(255, 255, 255, 0.15); cursor: pointer; transition: background 0.3s, width 0.3s var(--ease-out-expo) }
+    .c-dot.active { background: var(--white); width: 40px; box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) }
+
+    .carousel-arrows { display: flex; gap: 0.5rem }
+
+    .c-arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: transparent;
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s;
+    }
+
+    .c-arrow:hover { background: rgba(0, 212, 255, 0.08); border-color: var(--tech-g); color: var(--tech-g); box-shadow: 0 0 12px rgba(0, 212, 255, 0.3) }
+    .c-arrow svg { width: 14px; height: 14px }
+
+    .modal-body { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 6rem }
+
+    .modal-section-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 1.5rem }
+    .modal-section-title span { opacity: 0.3 }
+
+    .modal-text { font-size: 0.95rem; line-height: 1.9; color: rgba(244, 244, 240, 0.55); margin-bottom: 1rem }
+
+    .modal-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: rgba(0, 212, 255, 0.06); border-radius: 3px; overflow: hidden; margin-top: 2.5rem; box-shadow: 0 0 30px rgba(0, 212, 255, 0.05) }
+    .modal-detail { background: var(--black); padding: 1.4rem 1.6rem; transition: background 0.3s }
+    .modal-detail:hover { background: rgba(0, 212, 255, 0.04) }
+    .modal-detail-label { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem }
+    .modal-detail-value { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.05em; color: var(--white) }
+
+    .modal-coming-soon { border: 1px dashed rgba(0, 212, 255, 0.2); border-radius: 3px; padding: 3rem; text-align: center; background: rgba(0, 212, 255, 0.02); box-shadow: 0 0 30px rgba(0, 212, 255, 0.05) }
+    .modal-coming-soon h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.1em; color: rgba(0, 212, 255, 0.3); text-shadow: 0 0 20px rgba(0, 212, 255, 0.3); margin-bottom: 0.6rem }
+    .modal-coming-soon p { font-size: 0.85rem; color: var(--muted); line-height: 1.7 }
+
+    /* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+    #footer { padding: 3rem 4rem; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: space-between }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      background: linear-gradient(90deg, var(--horror-g), var(--cricket-g), var(--tech-g));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.4;
+    }
+
+    .footer-note { font-size: 0.7rem; color: rgba(244, 244, 240, 0.18) }
+
+    /* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+    @media(max-width:900px) {
+      .event-section { grid-template-columns: 1fr }
+      .ev-visual { min-height: 55vh }
+      .event-section.flipped .ev-visual { order: 0 }
+      .event-section.flipped .ev-info { order: 0; border-right: none }
+      .ev-info { padding: 3rem 2rem }
+      .nav-links { display: none }
+      .nav-hamburger { display: flex }
+      #navbar { padding: 1.4rem 1.8rem }
+      .events-strip { padding: 2.5rem 1.8rem }
+      .strip-line { margin: 0 2rem }
+      #footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem }
+    }
+
+    @media(max-width:600px) {
+      .ev-info { padding: 2.5rem 1.5rem }
+      .ev-cta-row { flex-direction: column; align-items: flex-start }
+      .modal-hero { padding: 6rem 1.5rem 3rem }
+      .modal-carousel-wrap { padding: 3rem 1rem 1rem }
+      .modal-body { padding: 2rem 1.5rem 5rem }
+      .modal-cta-row { flex-direction: column; align-items: center; width: 100% }
+      .modal-cta-row .btn { width: 100%; justify-content: center }
+    }
