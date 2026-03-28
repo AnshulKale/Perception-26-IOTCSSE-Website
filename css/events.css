@@ -1,6 +1,15 @@
 /* ─────────────────────────────────────────
    EVENTS INTRO STRIP
 ───────────────────────────────────────── */
+.modal-vierp-note .new-line {
+    display: block;
+    /* Makes the span start on a new line */
+    margin-top: 5px;
+    /* Adds space if needed */
+    font-weight: 700;
+    color: rgb(199, 199, 199);
+}
+
 .events-strip {
     padding: 4rem 4rem;
     display: flex;
@@ -84,28 +93,30 @@
 }
 
 .horror-bg {
-  background-image:
-    /* 3. Your custom image (replace URL) */
-    url('https://media.discordapp.net/attachments/1250871673402691760/1487383331212365926/content.png?ex=69c8f12c&is=69c79fac&hm=62a93b52a2d10131504f93c3fe727ef4b51f5545f9d249621e39c510bf34b771&=&format=webp&quality=lossless&width=350&height=525');
-    
-  background-size: cover;
-  background-position: center;
+    background-image:
+        /* 3. Your custom image (replace URL) */
+        url('https://media.discordapp.net/attachments/1250871673402691760/1487383331212365926/content.png?ex=69c8f12c&is=69c79fac&hm=62a93b52a2d10131504f93c3fe727ef4b51f5545f9d249621e39c510bf34b771&=&format=webp&quality=lossless&width=350&height=525');
+
+    background-size: cover;
+    background-position: center;
 }
 
 .cricket-bg {
-    background:
-        radial-gradient(ellipse 80% 70% at 60% 30%, rgba(0, 255, 157, 0.2) 0%, transparent 65%),
-        radial-gradient(ellipse 60% 80% at 30% 80%, rgba(0, 120, 60, 0.6) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 80% 60%, rgba(0, 80, 40, 0.3) 0%, transparent 50%),
-        #010a04;
+    background-image:
+        /* 3. Your custom image (replace URL) */
+        url('https://media.discordapp.net/attachments/1250871673402691760/1487440838354276382/strike360_hero_poster.png?ex=69c926bb&is=69c7d53b&hm=3022ed16228762f3e97334a702385625cbcadc6be1198763719421dcb3e9a34b&=&format=webp&quality=lossless&width=662&height=1175');
+
+    background-size: cover;
+    background-position: center;
 }
 
 .tech-bg {
-    background:
-        radial-gradient(ellipse 80% 70% at 40% 30%, rgba(0, 212, 255, 0.2) 0%, transparent 65%),
-        radial-gradient(ellipse 60% 80% at 70% 80%, rgba(0, 50, 100, 0.7) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 20% 70%, rgba(0, 100, 180, 0.2) 0%, transparent 50%),
-        #010408;
+    background-image:
+        /* 3. Your custom image (replace URL) */
+        url('https://media.discordapp.net/attachments/1250871673402691760/1487446704704852028/faef9c62-0f89-4658-b812-bc3211d926f8.png?ex=69c92c31&is=69c7dab1&hm=8b1e0cd374ef93fe76197cb05a96c6fb8d9d5e8c1f582ddcfec70b6fdc95acbb&=&format=webp&quality=lossless&width=743&height=1331');
+
+    background-size: cover;
+    background-position: center;
 }
 
 .ev-number {
