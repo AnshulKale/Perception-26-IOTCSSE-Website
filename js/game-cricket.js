@@ -199,30 +199,33 @@
         ball.vx += ball._swing;
         ball.vx += ball.vx * 0.008;
 
+        // If the ball passes the stumps
         if (ball.y > STUMP_Y + 10) {
-          ball.active = false;
-          if (!swinging) {
+            ball.active = false;
+            
+            // Check if the ball hit the stumps, regardless of if the bat is swinging
             const hitStumps = Math.abs(ball.x - STUMP_X) < 16;
+            
             if (hitStumps) {
-              wickets++;
-              showPopup('WICKET! 🏏', '#ff3355');
-              balls++;
-              updateHUD();
-              if (wickets >= MAX_WKTS) {
-                scheduleBowl(900); // will be ignored by endGame check
+            wickets++;
+            showPopup('WICKET! 🏏', '#ff3355');
+            balls++;
+            updateHUD();
+            if (wickets >= MAX_WKTS) {
+                scheduleBowl(900); // Dummy schedule
                 setTimeout(() => endGame(), 900);
-              } else {
-                scheduleBowl(1200);
-              }
             } else {
-              showPopup('Dot Ball', 'rgba(255,255,255,0.5)');
-              balls++;
-              updateHUD();
-              scheduleBowl(1100);
+                scheduleBowl(1200);
             }
-          }
+            } else {
+            // Player missed, but it didn't hit the stumps (Dot Ball)
+            showPopup('Dot Ball', 'rgba(255,255,255,0.5)');
+            balls++;
+            updateHUD();
+            scheduleBowl(1100);
+            }
         }
-      }
+        }
 
       function updateSwing() {
         if (!swinging) return;
