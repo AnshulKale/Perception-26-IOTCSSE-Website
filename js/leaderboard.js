@@ -10,18 +10,38 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 const LB = {
-  // Fetch top 10 scores for a specific game
+  // Fetch scores and filter for only the highest unique names
   async get(type) {
     try {
+      // 1. Fetch a large batch of the highest scores (up to 1000)
       const { data, error } = await supabaseClient
         .from('leaderboard')
         .select('*')
         .eq('game_type', type)
         .order('score', { ascending: false })
-        .limit(10);
+        .limit(1000); 
       
       if (error) throw error;
-      return data || [];
+      
+      // 2. Filter for unique names
+      const uniqueEntries = [];
+      const seenNames = new Set();
+      
+      for (const entry of (data || [])) {
+        // Convert to lowercase so "John" and "john" are treated as the same person
+        const nameKey = entry.name.toLowerCase().trim();
+        
+        if (!seenNames.has(nameKey)) {
+          seenNames.add(nameKey);        // Mark this name as seen
+          uniqueEntries.push(entry);     // Add their highest score to the final list
+          
+          // 3. Stop processing once we have the top 10 unique players
+          if (uniqueEntries.length >= 10) break; 
+        }
+      }
+      
+      return uniqueEntries;
+      
     } catch (e) {
       console.error("Error fetching leaderboard:", e);
       return [];
