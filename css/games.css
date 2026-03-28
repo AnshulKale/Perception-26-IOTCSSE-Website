@@ -10,20 +10,76 @@
 
 /* Intro screen shown before game starts */
 .game-intro-screen {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
-    transition: opacity 0.4s, visibility 0.4s;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: opacity 0.4s, visibility 0.4s;
+  
+  /* NEW: Hide by default so the banner image is fully visible */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.game-intro-screen.ready {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* ── BANNER COVER LAYER ── */
+.game-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.game-cover.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.cover-play-btn {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--white);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.15em;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cover-play-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05) translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.cover-play-btn:active {
+  transform: scale(0.95);
 }
 
 .game-intro-screen.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 /* Floating UI card on intro */
