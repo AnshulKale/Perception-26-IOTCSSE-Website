@@ -1,14 +1,16 @@
-* ───────────────────────────────────────── NAVBAR ───────────────────────────────────────── */ #navbar {
+* ───────────────────────────────────────── NAVBAR ───────────────────────────────────────── */ 
+#navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 500;
     padding: 1.8rem 4rem;
+    
+    /* THE FLEX MAGIC */
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    /* mix-blend-mode removed so the sticky background can be seen */
+    justify-content: space-between; /* Pushes children to opposite ends */
+    
     transition: all 0.4s var(--ease-out-expo);
 }
 
@@ -82,7 +84,13 @@
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    padding: 4px
+    padding: 4px;
+    
+    /* Locks exactly to the top-right corner of the navbar */
+    position: absolute;
+    top: 1.5rem; 
+    right: 1.8rem;
+    transform: none; /* Removes the buggy centering */
 }
 
 .nav-hamburger span {
