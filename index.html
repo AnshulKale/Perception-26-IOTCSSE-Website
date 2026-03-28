@@ -2,410 +2,449 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>IOT CS & SE — Lunar Arena 2025</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,700&display=swap"
-    rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>IOT CS & SE — Lunar Arena 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,700&display=swap"
+        rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/ui.css">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/events.css">
-  <link rel="stylesheet" href="css/modal.css">
-  <link rel="stylesheet" href="css/games.css">
-  <link rel="stylesheet" href="css/leaderboard.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/ui.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="css/leaderboard.css">
 </head>
 
 <body>
 
-<!-- CURSOR -->
-  <div id="cursor"></div>
-  <div id="cursor-ring"></div>
+    <!-- CURSOR -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
 
-  <!-- PAGE TRANSITION -->
-  <div id="page-transition">
-    <div class="pt-panel"></div>
-    <div class="pt-panel"></div>
-    <div class="pt-panel"></div>
-  </div>
-
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="loader-text"><span>LOADING</span></div>
-    <div class="loader-progress">
-      <div class="loader-progress-bar"></div>
+    <!-- PAGE TRANSITION -->
+    <div id="page-transition">
+        <div class="pt-panel"></div>
+        <div class="pt-panel"></div>
+        <div class="pt-panel"></div>
     </div>
-  </div>
 
-  <!-- MOBILE NAV -->
-  <div id="mobile-nav">
-    <button id="mobile-nav-close">✕</button>
-    <a href="#" onclick="closeMobileNav()">Home</a>
-    <a href="#" onclick="openModal('horror');closeMobileNav()">Lights Out</a>
-    <a href="#" onclick="openModal('cricket');closeMobileNav()">360 Strike</a>
-    <a href="#" onclick="openModal('tech');closeMobileNav()">SE Event</a>
-  </div>
-
-  <!-- NAVBAR -->
-  <nav id="navbar">
-    <a class="nav-logo" href="#">IOT<em>/</em>CS<em>&</em>SE</a>
-    <ul class="nav-links">
-      <li><a href="#" onclick="openModal('horror');return false">Lights Out</a></li>
-      <li><a href="#" onclick="openModal('cricket');return false">360 Strike</a></li>
-      <li><a href="#" onclick="openModal('tech');return false">SE Event</a></li>
-    </ul>
-    <div class="nav-hamburger" id="hamburger" onclick="openMobileNav()">
-      <span></span><span></span>
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="loader-text"><span>LOADING</span></div>
+        <div class="loader-progress">
+            <div class="loader-progress-bar"></div>
+        </div>
     </div>
-  </nav>
 
-  <!-- ══════════ HERO ══════════ -->
-  <section id="hero">
-    <div class="hero-canvas">
-      <canvas id="particleCanvas"></canvas>
-      <div class="hero-grain"></div>
+    <!-- MOBILE NAV -->
+    <div id="mobile-nav">
+        <button id="mobile-nav-close">✕</button>
+        <a href="#" onclick="closeMobileNav()">Home</a>
+        <a href="#" onclick="openModal('horror');closeMobileNav()">Lights Out</a>
+        <a href="#" onclick="openModal('cricket');closeMobileNav()">360 Strike</a>
+        <a href="#" onclick="openModal('tech');closeMobileNav()">SE Event</a>
     </div>
-    <div class="hero-content">
-      <p class="hero-dept">IOT CS &amp; SE Dept — Lunar Arena 2025</p>
-      <h1 class="hero-title">
-        <span class="t-line"><span class="t-inner">LUNAR</span></span>
-        <span class="t-line"><span class="t-inner">ARENA</span></span>
-      </h1>
-      <p class="hero-year">Three Events &nbsp;·&nbsp; One Dark Side</p>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <a class="nav-logo" href="#">IOT<em>/</em>CS<em>&</em>SE</a>
+        <ul class="nav-links">
+            <li><a href="#" onclick="openModal('horror');return false">Lights Out</a></li>
+            <li><a href="#" onclick="openModal('cricket');return false">360 Strike</a></li>
+            <li><a href="#" onclick="openModal('tech');return false">SE Event</a></li>
+        </ul>
+        <div class="nav-hamburger" id="hamburger" onclick="openMobileNav()">
+            <span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section id="hero">
+        <div class="hero-canvas">
+            <canvas id="particleCanvas"></canvas>
+            <div class="hero-grain"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-dept">IOT CS &amp; SE Dept — Lunar Arena 2025</p>
+            <h1 class="hero-title">
+                <span class="t-line"><span class="t-inner">LUNAR</span></span>
+                <span class="t-line"><span class="t-inner">ARENA</span></span>
+            </h1>
+            <p class="hero-year">Three Events &nbsp;·&nbsp; One Dark Side</p>
+        </div>
+        <div class="hero-scroll-hint">
+            <span class="scroll-label">Scroll</span>
+            <div class="scroll-track">
+                <div class="scroll-thumb"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strip -->
+    <div class="events-strip reveal">
+        <span class="strip-label">Phases of the Moon</span>
+        <div class="strip-line"></div>
+        <span class="strip-count">03</span>
     </div>
-    <div class="hero-scroll-hint">
-      <span class="scroll-label">Scroll</span>
-      <div class="scroll-track">
-        <div class="scroll-thumb"></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Strip -->
-  <div class="events-strip reveal">
-    <span class="strip-label">Phases of the Moon</span>
-    <div class="strip-line"></div>
-    <span class="strip-count">03</span>
-  </div>
+    <!-- ══════════ EVENT 1 — LIGHTS OUT ══════════ -->
+    <section class="event-section" id="sec-horror">
+        <div class="ev-visual reveal-left">
+            <div class="ev-bg horror-bg"></div>
 
-  <!-- ══════════ EVENT 1 — LIGHTS OUT ══════════ -->
-  <section class="event-section" id="sec-horror">
-    <div class="ev-visual reveal-left">
-      <div class="ev-bg horror-bg"></div>
+            <!-- ─── HORROR MINI-GAME ─── -->
+            <div class="game-wrap" id="horror-game-wrap">
 
-      <!-- ─── HORROR MINI-GAME ─── -->
-      <div class="game-wrap" id="horror-game-wrap">
+                <!-- Intro screen -->
+                <div class="game-intro-screen" id="horror-intro">
+                    <!-- Original VFX as ambient backdrop -->
+                    <div class="horror-vfx"
+                        style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);pointer-events:none;opacity:0.55;">
+                        <div class="eye"></div>
+                        <div class="pupil"></div>
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                        <div class="ring"></div>
+                    </div>
+                    <!-- Game card -->
+                    <div class="game-card horror-card">
+                        <span class="game-card-eyebrow">Horror Demo · Mini Game</span>
+                        <input id="horror-name-input" type="text" maxlength="18" placeholder="Your callsign..."
+                            class="game-name-input horror-name-input" autocomplete="off" />
+                        <button class="game-start-btn horror-start-btn" onclick="HorrorGame.init()">▶ ENTER
+                            DARKNESS</button>
+                        <span class="game-hint-text">WASD / Joystick · Collect 3 keys · Escape</span>
+                    </div>
+                </div>
 
-        <!-- Intro screen -->
-        <div class="game-intro-screen" id="horror-intro">
-          <!-- Original VFX as ambient backdrop -->
-          <div class="horror-vfx" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);pointer-events:none;opacity:0.55;">
-            <div class="eye"></div>
-            <div class="pupil"></div>
-            <div class="ring"></div>
-            <div class="ring"></div>
-            <div class="ring"></div>
-          </div>
-          <!-- Game card -->
-          <div class="game-card horror-card">
-            <span class="game-card-eyebrow">Horror Demo · Mini Game</span>
-            <input id="horror-name-input" type="text" maxlength="18"
-              placeholder="Your callsign..." class="game-name-input horror-name-input"
-              autocomplete="off" />
-            <button class="game-start-btn horror-start-btn" onclick="HorrorGame.init()">▶ ENTER DARKNESS</button>
-            <span class="game-hint-text">WASD / Joystick · Collect 3 keys · Escape</span>
-          </div>
+                <!-- Canvas (visible during game) -->
+                <canvas id="horror-canvas" class="game-canvas"></canvas>
+
+                <!-- HUD -->
+                <div id="horror-hud" class="game-hud horror-hud">
+                    <div class="hud-item" id="hud-keys">🗝 0/3</div>
+                    <div class="hud-item" id="hud-time">⏱ 0s</div>
+                </div>
+
+                <!-- Game Over / Win Screen -->
+                <div id="horror-game-over" class="game-over-screen">
+                    <div class="go-card horror-go-card">
+                        <div class="go-title" id="horror-go-title">GAME OVER</div>
+                        <div class="go-label">Score</div>
+                        <div class="go-score-val" id="horror-go-score">0</div>
+                        <div class="go-sub" id="horror-go-sub">0 keys · 0s survived</div>
+                        <button class="go-retry-btn horror-retry-btn" onclick="HorrorGame.restart()">↺ TRY
+                            AGAIN</button>
+                    </div>
+                </div>
+
+                <!-- Virtual Joystick (mobile only) -->
+                <div class="joy-zone" id="horror-joy-zone">
+                    <div class="joy-base" id="horror-joy-base">
+                        <div class="joy-knob" id="horror-joy-knob"></div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- ─── END HORROR GAME ─── -->
+
+            <!-- Inline leaderboard -->
+            <div class="ev-lb horror-ev-lb" id="ev-lb-horror">
+                <div class="ev-lb-title">TOP SCORES</div>
+                <div class="ev-lb-list" id="ev-lb-horror-list"></div>
+            </div>
+
+            <div class="ev-number">01</div>
         </div>
 
-        <!-- Canvas (visible during game) -->
-        <canvas id="horror-canvas" class="game-canvas"></canvas>
+        <div class="ev-info horror-accent reveal-right">
+            <span class="ev-tag">VR · Horror · Tournament</span>
+            <h2 class="ev-name">LIGHTS<span class="colored">OUT</span></h2>
+            <p class="ev-tagline">"When the moon goes dark, only the brave remain."</p>
+            <p class="ev-desc">A VR tournament staged on the lunar surface — no atmosphere, no light, no escape. Players
+                are sealed into haunted moonbase corridors and must outlast every rival in total blackout. The last
+                signal standing wins.</p>
+            <div class="ev-cta">
+                <div class="ev-cta-row">
+                    <button class="btn btn-register"><span>Register on VIERP</span></button>
+                    <a href="#" class="btn btn-wa">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        <span>Join WhatsApp</span>
+                    </a>
+                </div>
+                <p class="vierp-note"><strong>Registration not live yet</strong> — Link will be available on VIERP.IN
+                </p>
+                <a class="btn-details" href="#" onclick="openModal('horror');return false">Full Event Details</a>
+            </div>
+        </div>
+    </section>
 
-        <!-- HUD -->
-        <div id="horror-hud" class="game-hud horror-hud">
-          <div class="hud-item" id="hud-keys">🗝 0/3</div>
-          <div class="hud-item" id="hud-time">⏱ 0s</div>
+    <div class="section-divider"></div>
+
+    <!-- ══════════ EVENT 2 — 360 STRIKE ══════════ -->
+    <section class="event-section flipped" id="sec-cricket">
+        <div class="ev-visual reveal-right">
+            <div class="ev-bg cricket-bg"></div>
+
+            <!-- ─── CRICKET MINI-GAME ─── -->
+            <div class="game-wrap" id="cricket-game-wrap">
+
+                <!-- Intro screen -->
+                <div class="game-intro-screen" id="cricket-intro">
+                    <!-- Original orbit VFX as ambient -->
+                    <div class="cricket-vfx"
+                        style="position:absolute;top:50%;left:50%;transform:translate(-50%,-62%);pointer-events:none;opacity:0.55;">
+                        <div class="cricket-orbit"></div>
+                        <div class="cricket-orbit"></div>
+                        <div class="cricket-orbit"></div>
+                        <div class="cricket-ball"></div>
+                    </div>
+                    <!-- Game card -->
+                    <div class="game-card cricket-card">
+                        <span class="game-card-eyebrow">360 Strike · Batting Demo</span>
+                        <input id="cricket-name-input" type="text" maxlength="18" placeholder="Your name..."
+                            class="game-name-input cricket-name-input" autocomplete="off" />
+                        <button class="game-start-btn cricket-start-btn" onclick="CricketGame.init()">🏏 STEP TO THE
+                            CREASE</button>
+                        <span class="game-hint-text">Click / Tap to swing · Time it perfectly</span>
+                    </div>
+                </div>
+
+                <!-- Canvas -->
+                <canvas id="cricket-canvas" class="game-canvas"></canvas>
+
+                <!-- HUD -->
+                <div id="cricket-hud" class="game-hud cricket-hud">
+                    <div class="hud-item" id="hud-runs">🏏 0</div>
+                    <div class="hud-item" id="hud-wkts">Wkts: 0/3</div>
+                    <div class="hud-item" id="hud-balls">Balls: 0</div>
+                </div>
+
+                <!-- Game Over Screen -->
+                <div id="cricket-game-over" class="game-over-screen">
+                    <div class="go-card cricket-go-card">
+                        <div class="go-title">INNINGS OVER</div>
+                        <div class="go-label">Total Runs</div>
+                        <div class="go-score-val" id="cricket-go-score">0</div>
+                        <div class="go-sub" id="cricket-go-sub">0 fours · 0 sixes</div>
+                        <button class="go-retry-btn cricket-retry-btn" onclick="CricketGame.restart()">↺ BAT
+                            AGAIN</button>
+                    </div>
+                </div>
+
+                <!-- Mobile swing button -->
+                <button class="cricket-tap-btn" id="cricket-tap-btn" ontouchstart="CricketGame.swing(event)">
+                    🏏 SWING
+                </button>
+
+            </div>
+            <!-- ─── END CRICKET GAME ─── -->
+
+            <!-- Inline leaderboard -->
+            <div class="ev-lb cricket-ev-lb" id="ev-lb-cricket">
+                <div class="ev-lb-title">TOP SCORES</div>
+                <div class="ev-lb-list" id="ev-lb-cricket-list"></div>
+            </div>
+
+            <div class="ev-number">02</div>
         </div>
 
-        <!-- Game Over / Win Screen -->
-        <div id="horror-game-over" class="game-over-screen">
-          <div class="go-card horror-go-card">
-            <div class="go-title" id="horror-go-title">GAME OVER</div>
-            <div class="go-label">Score</div>
-            <div class="go-score-val" id="horror-go-score">0</div>
-            <div class="go-sub" id="horror-go-sub">0 keys · 0s survived</div>
-            <button class="go-retry-btn horror-retry-btn" onclick="HorrorGame.restart()">↺ TRY AGAIN</button>
-          </div>
+        <div class="ev-info cricket-accent reveal-left">
+            <span class="ev-tag">Cricket · Strategy · Challenge</span>
+            <h2 class="ev-name"><span class="colored">360</span>STRIKE</h2>
+            <p class="ev-tagline">"Hit across every crater. Cover every degree."</p>
+            <p class="ev-desc">Cricket reimagined under low-gravity lunar rules. Every angle of the ground is in play —
+                like craters scattered across the moon's surface, each zone scores differently. Master all 360° or be
+                swallowed by the void.</p>
+            <div class="ev-cta">
+                <div class="ev-cta-row">
+                    <button class="btn btn-register"><span>Register on VIERP</span></button>
+                    <a href="#" class="btn btn-wa">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        <span>Join WhatsApp</span>
+                    </a>
+                </div>
+                <p class="vierp-note"><strong>Registration not live yet</strong> — Link will be available on VIERP.IN
+                </p>
+                <a class="btn-details" href="#" onclick="openModal('cricket');return false">Full Event Details</a>
+            </div>
         </div>
+    </section>
 
-        <!-- Virtual Joystick (mobile only) -->
-        <div class="joy-zone" id="horror-joy-zone">
-          <div class="joy-base" id="horror-joy-base">
-            <div class="joy-knob" id="horror-joy-knob"></div>
-          </div>
+    <div class="section-divider"></div>
+
+    <!-- ══════════ EVENT 3 — SE EVENT ══════════ -->
+    <section class="event-section" id="sec-tech">
+        <div class="ev-visual reveal-left">
+            <div class="ev-bg tech-bg"></div>
+            <div class="ev-visual-inner">
+                <div class="tech-vfx">
+                    <div class="tech-line h" style="--tp:30%"></div>
+                    <div class="tech-line h" style="--tp:50%;--tld:2.8s"></div>
+                    <div class="tech-line h" style="--tp:70%;--tld:1.8s"></div>
+                    <div class="tech-line v" style="--lp:30%;--tld:3.2s"></div>
+                    <div class="tech-line v" style="--lp:50%;--tld:2s"></div>
+                    <div class="tech-line v" style="--lp:70%;--tld:2.5s"></div>
+                    <div class="tech-dot" style="top:30%;left:30%;--tdd:1.2s"></div>
+                    <div class="tech-dot" style="top:30%;left:70%;--tdd:2s"></div>
+                    <div class="tech-dot" style="top:70%;left:30%;--tdd:1.7s"></div>
+                    <div class="tech-dot" style="top:70%;left:70%;--tdd:2.4s"></div>
+                    <div class="tech-dot" style="top:50%;left:50%;--tdd:0.8s"></div>
+                    <div class="tech-hex"></div>
+                </div>
+            </div>
+            <div class="ev-number">03</div>
         </div>
+        <div class="ev-info tech-accent reveal-right">
+            <span class="ev-tag">SE · Technical Event · TBA</span>
+            <h2 class="ev-name">EVENT<span class="colored">NAME</span></h2>
+            <p class="ev-tagline">"Engineer the systems that keep the moonbase alive."</p>
+            <p class="ev-desc">A software engineering challenge set in the lunar operations theatre. Build, debug and
+                deploy critical systems under mission pressure — full event format and rules are being finalised.
+                Transmission incoming.</p>
+            <div class="ev-cta">
+                <div class="ev-cta-row">
+                    <button class="btn btn-register"><span>Register on VIERP</span></button>
+                    <a href="#" class="btn btn-wa">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        <span>Join WhatsApp</span>
+                    </a>
+                </div>
+                <p class="vierp-note"><strong>Registration not live yet</strong> — Link will be available on VIERP.IN
+                </p>
+                <a class="btn-details" href="#" onclick="openModal('tech');return false">Full Event Details</a>
+            </div>
+        </div>
+    </section>
 
-      </div>
-      <!-- ─── END HORROR GAME ─── -->
+    <!-- ══════════ LEADERBOARD ══════════ -->
+    <section id="leaderboard-section" class="reveal">
+        <div class="lb-inner">
+            <span class="lb-eyebrow">— Global Rankings —</span>
+            <h2 class="lb-title">LEADERBOARD</h2>
+            <div class="lb-tabs">
+                <button class="lb-tab active" data-type="horror" onclick="switchLbTab('horror')">⚡ Lights Out</button>
+                <button class="lb-tab" data-type="cricket" onclick="switchLbTab('cricket')">🏏 360 Strike</button>
+            </div>
+            <div id="lb-entries"></div>
+            <p class="lb-footer-note">Scores stored locally · Play the demo games to enter rankings</p>
+        </div>
+    </section>
 
-      <!-- Inline leaderboard -->
-      <div class="ev-lb horror-ev-lb" id="ev-lb-horror">
-        <div class="ev-lb-title">TOP SCORES</div>
-        <div class="ev-lb-list" id="ev-lb-horror-list"></div>
-      </div>
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer-logo">IOT CS &amp; SE DEPT — LUNAR ARENA 2025</div>
+        <p class="footer-note">All events subject to updates · check back regularly</p>
+    </footer>
 
-      <div class="ev-number">01</div>
-    </div>
-
-    <div class="ev-info horror-accent reveal-right">
-      <span class="ev-tag">VR · Horror · Tournament</span>
-      <h2 class="ev-name">LIGHTS<span class="colored">OUT</span></h2>
-      <p class="ev-tagline">"When the moon goes dark, only the brave remain."</p>
-      <p class="ev-desc">A VR tournament staged on the lunar surface — no atmosphere, no light, no escape. Players are sealed into haunted moonbase corridors and must outlast every rival in total blackout. The last signal standing wins.</p>
-      <div class="ev-cta">
-        <div class="ev-cta-row">
-          <button class="btn btn-register"><span>Register on VIERP</span></button>
-          <a href="#" class="btn btn-wa">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    <!-- ══════════ EVENT DETAIL MODAL ══════════ -->
+    <div id="event-modal" role="dialog" aria-modal="true">
+        <button class="modal-close" id="modal-close-btn">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M13 3L3 13M3 3l10 10" />
             </svg>
-            <span>Join WhatsApp</span>
-          </a>
-        </div>
-        <p class="vierp-note"><strong>Registration not live yet</strong> — Link will be available on VIERP.IN</p>
-        <a class="btn-details" href="#" onclick="openModal('horror');return false">Full Event Details</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ══════════ EVENT 2 — 360 STRIKE ══════════ -->
-  <section class="event-section flipped" id="sec-cricket">
-    <div class="ev-visual reveal-right">
-      <div class="ev-bg cricket-bg"></div>
-
-      <!-- ─── CRICKET MINI-GAME ─── -->
-      <div class="game-wrap" id="cricket-game-wrap">
-
-        <!-- Intro screen -->
-        <div class="game-intro-screen" id="cricket-intro">
-          <!-- Original orbit VFX as ambient -->
-          <div class="cricket-vfx" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-62%);pointer-events:none;opacity:0.55;">
-            <div class="cricket-orbit"></div>
-            <div class="cricket-orbit"></div>
-            <div class="cricket-orbit"></div>
-            <div class="cricket-ball"></div>
-          </div>
-          <!-- Game card -->
-          <div class="game-card cricket-card">
-            <span class="game-card-eyebrow">360 Strike · Batting Demo</span>
-            <input id="cricket-name-input" type="text" maxlength="18"
-              placeholder="Your name..." class="game-name-input cricket-name-input"
-              autocomplete="off" />
-            <button class="game-start-btn cricket-start-btn" onclick="CricketGame.init()">🏏 STEP TO THE CREASE</button>
-            <span class="game-hint-text">Click / Tap to swing · Time it perfectly</span>
-          </div>
-        </div>
-
-        <!-- Canvas -->
-        <canvas id="cricket-canvas" class="game-canvas"></canvas>
-
-        <!-- HUD -->
-        <div id="cricket-hud" class="game-hud cricket-hud">
-          <div class="hud-item" id="hud-runs">🏏 0</div>
-          <div class="hud-item" id="hud-wkts">Wkts: 0/3</div>
-          <div class="hud-item" id="hud-balls">Balls: 0</div>
-        </div>
-
-        <!-- Game Over Screen -->
-        <div id="cricket-game-over" class="game-over-screen">
-          <div class="go-card cricket-go-card">
-            <div class="go-title">INNINGS OVER</div>
-            <div class="go-label">Total Runs</div>
-            <div class="go-score-val" id="cricket-go-score">0</div>
-            <div class="go-sub" id="cricket-go-sub">0 fours · 0 sixes</div>
-            <button class="go-retry-btn cricket-retry-btn" onclick="CricketGame.restart()">↺ BAT AGAIN</button>
-          </div>
-        </div>
-
-        <!-- Mobile swing button -->
-        <button class="cricket-tap-btn" id="cricket-tap-btn" ontouchstart="CricketGame.swing(event)">
-          🏏 SWING
+            Close
         </button>
-
-      </div>
-      <!-- ─── END CRICKET GAME ─── -->
-
-      <!-- Inline leaderboard -->
-      <div class="ev-lb cricket-ev-lb" id="ev-lb-cricket">
-        <div class="ev-lb-title">TOP SCORES</div>
-        <div class="ev-lb-list" id="ev-lb-cricket-list"></div>
-      </div>
-
-      <div class="ev-number">02</div>
-    </div>
-
-    <div class="ev-info cricket-accent reveal-left">
-      <span class="ev-tag">Cricket · Strategy · Challenge</span>
-      <h2 class="ev-name"><span class="colored">360</span>STRIKE</h2>
-      <p class="ev-tagline">"Hit across every crater. Cover every degree."</p>
-      <p class="ev-desc">Cricket reimagined under low-gravity lunar rules. Every angle of the ground is in play — like craters scattered across the moon's surface, each zone scores differently. Master all 360° or be swallowed by the void.</p>
-      <div class="ev-cta">
-        <div class="ev-cta-row">
-          <button class="btn btn-register"><span>Register on VIERP</span></button>
-          <a href="#" class="btn btn-wa">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-            <span>Join WhatsApp</span>
-          </a>
+        <div class="modal-hero">
+            <div class="modal-bg" id="modal-bg"></div>
+            <span class="modal-tag" id="modal-tag"></span>
+            <h2 class="modal-title" id="modal-title"></h2>
+            <p class="modal-subtitle" id="modal-subtitle"></p>
+            <div class="modal-cta">
+                <div class="modal-cta-row">
+                    <button class="btn btn-register"><span>Register on VIERP</span></button>
+                    <a href="#" id="modal-wa-btn" class="btn btn-wa">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        <span>Join WhatsApp Group</span>
+                    </a>
+                </div>
+                <p class="modal-vierp-note">Registration link not yet live — check back on VIERP.IN</p>
+            </div>
         </div>
-        <p class="vierp-note"><strong>Registration not live yet</strong> — Link will be available on VIERP.IN</p>
-        <a class="btn-details" href="#" onclick="openModal('cricket');return false">Full Event Details</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ══════════ EVENT 3 — SE EVENT ══════════ -->
-  <section class="event-section" id="sec-tech">
-    <div class="ev-visual reveal-left">
-      <div class="ev-bg tech-bg"></div>
-      <div class="ev-visual-inner">
-        <div class="tech-vfx">
-          <div class="tech-line h" style="--tp:30%"></div>
-          <div class="tech-line h" style="--tp:50%;--tld:2.8s"></div>
-          <div class="tech-line h" style="--tp:70%;--tld:1.8s"></div>
-          <div class="tech-line v" style="--lp:30%;--tld:3.2s"></div>
-          <div class="tech-line v" style="--lp:50%;--tld:2s"></div>
-          <div class="tech-line v" style="--lp:70%;--tld:2.5s"></div>
-          <div class="tech-dot" style="top:30%;left:30%;--tdd:1.2s"></div>
-          <div class="tech-dot" style="top:30%;left:70%;--tdd:2s"></div>
-          <div class="tech-dot" style="top:70%;left:30%;--tdd:1.7s"></div>
-          <div class="tech-dot" style="top:70%;left:70%;--tdd:2.4s"></div>
-          <div class="tech-dot" style="top:50%;left:50%;--tdd:0.8s"></div>
-          <div class="tech-hex"></div>
+        <div class="modal-carousel-wrap">
+            <p class="carousel-label">— Banners & Posters —</p>
+            <div class="carousel">
+                <div class="carousel-track" id="modal-track">
+                    <div class="carousel-slide">
+                        <div class="slide-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <polyline points="21 15 16 10 5 21" />
+                            </svg><span>Poster / Banner 01</span></div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="slide-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <polyline points="21 15 16 10 5 21" />
+                            </svg><span>Poster / Banner 02</span></div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="slide-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <polyline points="21 15 16 10 5 21" />
+                            </svg><span>Poster / Banner 03</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <div class="carousel-dots" id="modal-dots">
+                    <div class="c-dot active" data-i="0"></div>
+                    <div class="c-dot" data-i="1"></div>
+                    <div class="c-dot" data-i="2"></div>
+                </div>
+                <div class="carousel-arrows">
+                    <button class="c-arrow" id="c-prev"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M9 2L4 7l5 5" />
+                        </svg></button>
+                    <button class="c-arrow" id="c-next"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M5 2l5 5-5 5" />
+                        </svg></button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="ev-number">03</div>
-    </div>
-    <div class="ev-info tech-accent reveal-right">
-      <span class="ev-tag">SE · Technical Event · TBA</span>
-      <h2 class="ev-name">EVENT<span class="colored">NAME</span></h2>
-      <p class="ev-tagline">"Engineer the systems that keep the moonbase alive."</p>
-      <p class="ev-desc">A software engineering challenge set in the lunar operations theatre. Build, debug and deploy critical systems under mission pressure — full event format and rules are being finalised. Transmission incoming.</p>
-      <div class="ev-cta">
-        <div class="ev-cta-row">
-          <button class="btn btn-register"><span>Register on VIERP</span></button>
-          <a href="#" class="btn btn-wa">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-            <span>Join WhatsApp</span>
-          </a>
+        <div class="modal-body">
+            <h3 class="modal-section-title">About <span id="modal-about-name"></span></h3>
+            <div id="modal-desc"></div>
+            <div class="modal-details" id="modal-details"></div>
         </div>
-        <p class="vierp-note"><strong>Registration not live yet</strong> — Link will be available on VIERP.IN</p>
-        <a class="btn-details" href="#" onclick="openModal('tech');return false">Full Event Details</a>
-      </div>
     </div>
-  </section>
 
-  <!-- ══════════ LEADERBOARD ══════════ -->
-  <section id="leaderboard-section" class="reveal">
-    <div class="lb-inner">
-      <span class="lb-eyebrow">— Global Rankings —</span>
-      <h2 class="lb-title">LEADERBOARD</h2>
-      <div class="lb-tabs">
-        <button class="lb-tab active" data-type="horror" onclick="switchLbTab('horror')">⚡ Lights Out</button>
-        <button class="lb-tab" data-type="cricket" onclick="switchLbTab('cricket')">🏏 360 Strike</button>
-      </div>
-      <div id="lb-entries"></div>
-      <p class="lb-footer-note">Scores stored locally · Play the demo games to enter rankings</p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer id="footer">
-    <div class="footer-logo">IOT CS &amp; SE DEPT — LUNAR ARENA 2025</div>
-    <p class="footer-note">All events subject to updates · check back regularly</p>
-  </footer>
-
-  <!-- ══════════ EVENT DETAIL MODAL ══════════ -->
-  <div id="event-modal" role="dialog" aria-modal="true">
-    <button class="modal-close" id="modal-close-btn">
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M13 3L3 13M3 3l10 10" />
-      </svg>
-      Close
-    </button>
-    <div class="modal-hero">
-      <div class="modal-bg" id="modal-bg"></div>
-      <span class="modal-tag" id="modal-tag"></span>
-      <h2 class="modal-title" id="modal-title"></h2>
-      <p class="modal-subtitle" id="modal-subtitle"></p>
-      <div class="modal-cta">
-        <div class="modal-cta-row">
-          <button class="btn btn-register"><span>Register on VIERP</span></button>
-          <a href="#" id="modal-wa-btn" class="btn btn-wa">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-            <span>Join WhatsApp Group</span>
-          </a>
-        </div>
-        <p class="modal-vierp-note">Registration link not yet live — check back on VIERP.IN</p>
-      </div>
-    </div>
-    <div class="modal-carousel-wrap">
-      <p class="carousel-label">— Banners & Posters —</p>
-      <div class="carousel">
-        <div class="carousel-track" id="modal-track">
-          <div class="carousel-slide">
-            <div class="slide-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg><span>Poster / Banner 01</span></div>
-          </div>
-          <div class="carousel-slide">
-            <div class="slide-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg><span>Poster / Banner 02</span></div>
-          </div>
-          <div class="carousel-slide">
-            <div class="slide-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg><span>Poster / Banner 03</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-nav">
-        <div class="carousel-dots" id="modal-dots">
-          <div class="c-dot active" data-i="0"></div>
-          <div class="c-dot" data-i="1"></div>
-          <div class="c-dot" data-i="2"></div>
-        </div>
-        <div class="carousel-arrows">
-          <button class="c-arrow" id="c-prev"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5" /></svg></button>
-          <button class="c-arrow" id="c-next"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2l5 5-5 5" /></svg></button>
-        </div>
-      </div>
-    </div>
-    <div class="modal-body">
-      <h3 class="modal-section-title">About <span id="modal-about-name"></span></h3>
-      <div id="modal-desc"></div>
-      <div class="modal-details" id="modal-details"></div>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="js/loader.js"></script>
-  <script src="js/cursor.js"></script>
-  <script src="js/hero-canvas.js"></script>
-  <script src="js/navbar.js"></script>
-  <script src="js/scroll-reveal.js"></script>
-  <script src="js/modal.js"></script>
-  <script src="js/transitions.js"></script>
-  <script src="js/leaderboard.js"></script>
-  <script src="js/game-horror.js"></script>
-  <script src="js/game-cricket.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/hero-canvas.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/scroll-reveal.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/leaderboard.js"></script>
+    <script src="js/game-horror.js"></script>
+    <script src="js/game-cricket.js"></script>
 
 </body>
 
