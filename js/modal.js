@@ -48,9 +48,9 @@ const events = {
     ],
     // ADD YOUR HORROR IMAGES HERE
     banners: [
-      'https://ibb.co/Q70jN5by/content.png',
-      'https://ibb.co/4g0V6XpK/content.png',
-      'https://ibb.co/ksk3tPtS/content.png'
+      'https://i.ibb.co/N6Yg3drx/image.png',
+      'https://i.ibb.co/qL46F4Zy/image2.png',
+      'https://i.ibb.co/39GfnPnC/image3.png'
     ]
   },
   cricket: {
@@ -77,9 +77,9 @@ const events = {
     ],
     // ADD YOUR CRICKET IMAGES HERE
     banners: [
-      'https://ibb.co/MyLkrBwH/content.png',
-      'https://ibb.co/gZ6wZQ9J/content.png',
-      'https://ibb.co/nNBHmR0j/content.png'
+      'https://i.ibb.co/B2bHqSmV/strike360-banner-poster.png',
+      'https://i.ibb.co/YFwhQSH0/strike360-bowler-delivery.png',
+      'https://i.ibb.co/Kx4HsHfH/strike360-fielder-boundary-dive.png'
     ]
   },
   tech: {
@@ -105,9 +105,9 @@ const events = {
     ],
     // ADD YOUR TECH IMAGES HERE
     banners: [
-      'https://ibb.co/mFyJXpTK/content.png',
-      'https://ibb.co/cKz7t1qH/content.png',
-      'https://ibb.co/4wXWVhKQ/content.png'
+      'https://i.ibb.co/sp5XfQ79/1P.jpg',
+      'https://i.ibb.co/PZwVPCLz/3P.jpg',
+      'https://i.ibb.co/xq1jWwbj/2P.jpg'
     ]
   }
 };
