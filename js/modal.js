@@ -10,7 +10,7 @@ function cGo(n) {
   const dots = document.querySelectorAll('#modal-dots .c-dot');
   const total = dots.length;
   if (total === 0) return;
-  
+
   cCur = (n + total) % total;
   cTrack.style.transform = `translateX(-${cCur * 100}%)`;
   dots.forEach((d, i) => d.classList.toggle('active', i === cCur));
@@ -48,9 +48,9 @@ const events = {
     ],
     // ADD YOUR HORROR IMAGES HERE
     banners: [
-      'https://media.discordapp.net/attachments/1250871673402691760/1487387461255434341/image.png?ex=69c8f505&is=69c7a385&hm=24e946f80c01682f80a6a4e6763a0dce2216cd3f6270c227d841c89115535a42&=&format=webp&quality=lossless&width=1536&height=566',
-      'https://media.discordapp.net/attachments/1250871673402691760/1487388696016588811/image.png?ex=69c8f62b&is=69c7a4ab&hm=1ce8a7fe71c21397259649bb935192c3d092b66f5858d0c20f5fc291a6ff79a4&=&format=webp&quality=lossless&width=825&height=303',
-      'https://media.discordapp.net/attachments/1250871673402691760/1487389524525846609/image.png?ex=69c8f6f1&is=69c7a571&hm=644ac839c445eeff5731b82340a31a49a3ad18a52e9b7a01ed3d19ca28b1c053&=&format=webp&quality=lossless&width=1536&height=566'
+      'https://ibb.co/Q70jN5by',
+      'https://ibb.co/4g0V6XpK',
+      'https://ibb.co/ksk3tPtS'
     ]
   },
   cricket: {
@@ -77,9 +77,9 @@ const events = {
     ],
     // ADD YOUR CRICKET IMAGES HERE
     banners: [
-      'https://media.discordapp.net/attachments/1250871673402691760/1487440836206788679/strike360_banner_poster.png?ex=69c926ba&is=69c7d53a&hm=a8a2986b7718412338b2ec6dbbd91e5af38260f07ffea49f592146f09cf4d4fc&=&format=webp&quality=lossless&width=1800&height=674',
-      'https://media.discordapp.net/attachments/1250871673402691760/1487440837750030418/strike360_fielder_boundary_dive.png?ex=69c926bb&is=69c7d53b&hm=c449f82ef8111ae74755e6358d0f9f51b86ee137663f8e9323b076997a27fa30&=&format=webp&quality=lossless&width=1800&height=674',
-      'https://media.discordapp.net/attachments/1250871673402691760/1487440837351702668/strike360_bowler_delivery.png?ex=69c926ba&is=69c7d53a&hm=5f02043fa46dc8538c6cdaa5b56d7471f95177ccb853abbf15dc28739e89b972&=&format=webp&quality=lossless&width=1800&height=675'
+      'https://ibb.co/MyLkrBwH',
+      'https://ibb.co/gZ6wZQ9J',
+      'https://ibb.co/nNBHmR0j'
     ]
   },
   tech: {
@@ -105,9 +105,9 @@ const events = {
     ],
     // ADD YOUR TECH IMAGES HERE
     banners: [
-      'https://media.discordapp.net/attachments/1250871673402691760/1487437901628178484/3P.jpeg?ex=69c923ff&is=69c7d27f&hm=c4deda5f49fa65febcc406a4ae1fe2d7a3bdb60f36b9e87e391f3453bc8ccbee&=&format=webp&width=2333&height=857',
-      'https://media.discordapp.net/attachments/1250871673402691760/1487437902018511110/2P.jpeg?ex=69c923ff&is=69c7d27f&hm=8493cea1c5489e60f83850f60a5ff3e6dfd9805c7554669a6e1d25c6ee5742b7&=&format=webp&width=2333&height=857',
-      'https://media.discordapp.net/attachments/1250871673402691760/1487437901141901432/1P.jpeg?ex=69c923fe&is=69c7d27e&hm=e121c965e6911d5b4ed82e1060a761699dc913816cff52e7df6359d4b6fd9065&=&format=webp&width=2333&height=857'
+      'https://ibb.co/mFyJXpTK',
+      'https://ibb.co/cKz7t1qH',
+      'https://ibb.co/4wXWVhKQ'
     ]
   }
 };
@@ -119,21 +119,21 @@ const modal = document.getElementById('event-modal');
 
 function openModal(type) {
   const d = events[type];
-  
+
   // 1. Inject the Text
   document.getElementById('modal-tag').textContent = d.tag;
   document.getElementById('modal-title').innerHTML = `${d.titleLine1}<br>${d.titleLine2}`;
   document.getElementById('modal-subtitle').textContent = d.subtitle;
   document.getElementById('modal-about-name').textContent = d.aboutName;
   document.getElementById('modal-bg').style.background = d.bg;
-  
+
   const descEl = document.getElementById('modal-desc');
-  if (d.desc) { 
-    descEl.innerHTML = d.desc; 
-  } else { 
+  if (d.desc) {
+    descEl.innerHTML = d.desc;
+  } else {
     descEl.innerHTML = `<div class="modal-coming-soon"><h3>Details Coming Soon</h3><p>Full event description, format and rules are being finalised — check back shortly.</p></div>`;
   }
-  
+
   document.getElementById('modal-details').innerHTML = d.details.map(x => `
     <div class="modal-detail">
       <div class="modal-detail-label">${x.label}</div>
@@ -143,18 +143,18 @@ function openModal(type) {
   // 2. Inject the Images dynamically
   const track = document.getElementById('modal-track');
   const dotsContainer = document.getElementById('modal-dots');
-  
+
   if (d.banners && d.banners.length > 0) {
     track.innerHTML = d.banners.map(imgSrc => `
       <div class="carousel-slide">
         <img src="${imgSrc}" alt="${d.aboutName} Banner" style="width:100%; height:100%; object-fit:contain; border-radius:4px; background:#000;">
       </div>
     `).join('');
-    
+
     dotsContainer.innerHTML = d.banners.map((_, i) => `
       <div class="c-dot ${i === 0 ? 'active' : ''}" data-i="${i}"></div>
     `).join('');
-    
+
     // Bind click events to the new dots
     document.querySelectorAll('#modal-dots .c-dot').forEach(dot => {
       dot.onclick = () => cGo(+dot.dataset.i);
