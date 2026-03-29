@@ -48,9 +48,9 @@ const events = {
     ],
     // ADD YOUR HORROR IMAGES HERE
     banners: [
-      'https://ibb.co/Q70jN5by',
-      'https://ibb.co/4g0V6XpK',
-      'https://ibb.co/ksk3tPtS'
+      'https://ibb.co/Q70jN5by/content.png',
+      'https://ibb.co/4g0V6XpK/content.png',
+      'https://ibb.co/ksk3tPtS/content.png'
     ]
   },
   cricket: {
@@ -77,9 +77,9 @@ const events = {
     ],
     // ADD YOUR CRICKET IMAGES HERE
     banners: [
-      'https://ibb.co/MyLkrBwH',
-      'https://ibb.co/gZ6wZQ9J',
-      'https://ibb.co/nNBHmR0j'
+      'https://ibb.co/MyLkrBwH/content.png',
+      'https://ibb.co/gZ6wZQ9J/content.png',
+      'https://ibb.co/nNBHmR0j/content.png'
     ]
   },
   tech: {
@@ -105,9 +105,9 @@ const events = {
     ],
     // ADD YOUR TECH IMAGES HERE
     banners: [
-      'https://ibb.co/mFyJXpTK',
-      'https://ibb.co/cKz7t1qH',
-      'https://ibb.co/4wXWVhKQ'
+      'https://ibb.co/mFyJXpTK/content.png',
+      'https://ibb.co/cKz7t1qH/content.png',
+      'https://ibb.co/4wXWVhKQ/content.png'
     ]
   }
 };
