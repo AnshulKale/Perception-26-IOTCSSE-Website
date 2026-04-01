@@ -647,11 +647,17 @@
 }
 
 .btn-register {
-    background: rgba(255, 255, 255, 0.06);
-    color: rgba(244, 244, 240, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    cursor: not-allowed;
-    pointer-events: none
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.btn-register:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .btn-wa {
