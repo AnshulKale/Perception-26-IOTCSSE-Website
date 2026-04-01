@@ -381,6 +381,37 @@
     box-shadow: 0 0 20px rgba(0, 255, 157, 0.4)
 }
 
+.go-wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--white);
+    background: rgba(37, 211, 102, 0.15); /* WhatsApp green */
+    border: 1px solid rgba(37, 211, 102, 0.4);
+    padding: 0.5rem 1.2rem;
+    border-radius: 3px;
+    margin-top: 0.4rem;
+    transition: all 0.3s;
+}
+
+.go-wa-btn:hover {
+    background: rgba(37, 211, 102, 0.25);
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
+}
+
+@media(max-width: 600px) {
+    .go-wa-btn {
+        padding: 0.75rem 1.8rem;
+        font-size: 0.95rem;
+        margin-top: 0.8rem;
+    }
+}
+
 /* Virtual Joystick (mobile horror) */
 .joy-zone {
     position: absolute;

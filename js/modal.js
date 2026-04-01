@@ -48,9 +48,9 @@ const events = {
     ],
     // ADD YOUR HORROR IMAGES HERE
     banners: [
-      'https://i.ibb.co/N6Yg3drx/image.png',
-      'https://i.ibb.co/qL46F4Zy/image2.png',
-      'https://i.ibb.co/39GfnPnC/image3.png'
+      'resources/image.png',
+      'resources/image2.png',
+      'resources/image3.png'
     ]
   },
   cricket: {

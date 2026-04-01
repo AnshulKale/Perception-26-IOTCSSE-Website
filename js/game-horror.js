@@ -343,10 +343,10 @@ const HorrorGame = (() => {
     function update(dt) {
         // ── Player movement ──
         let dx = 0, dy = 0;
-        if (keysDown['arrowup'] || keysDown['w']) dy = -1;
-        if (keysDown['arrowdown'] || keysDown['s']) dy = 1;
-        if (keysDown['arrowleft'] || keysDown['a']) dx = -1;
-        if (keysDown['arrowright'] || keysDown['d']) dx = 1;
+        if (keysDown['arrowup'] || keysDown['w'] || keysDown['keyw']) dy = -1;
+        if (keysDown['arrowdown'] || keysDown['s'] || keysDown['keys']) dy = 1;
+        if (keysDown['arrowleft'] || keysDown['a'] || keysDown['keya']) dx = -1;
+        if (keysDown['arrowright'] || keysDown['d'] || keysDown['keyd']) dx = 1;
         if (joyActive) { dx = joyDx; dy = joyDy; }
         const len = Math.sqrt(dx * dx + dy * dy);
         if (len > 0) { dx /= len; dy /= len; player.dx = dx; player.dy = dy; }
@@ -494,9 +494,13 @@ const HorrorGame = (() => {
 
     function onKeyDown(e) {
         keysDown[e.key.toLowerCase()] = true;
-        if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright'].includes(e.key.toLowerCase())) e.preventDefault();
+        if (e.code) keysDown[e.code.toLowerCase()] = true;
+        if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'w', 'a', 's', 'd'].includes(e.key.toLowerCase())) e.preventDefault();
     }
-    function onKeyUp(e) { keysDown[e.key.toLowerCase()] = false; }
+    function onKeyUp(e) { 
+        keysDown[e.key.toLowerCase()] = false; 
+        if (e.code) keysDown[e.code.toLowerCase()] = false;
+    }
 
     let _kd, _ku;
     function _bindControls() {

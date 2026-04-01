@@ -95,9 +95,10 @@
 .horror-bg {
     background-image:
         /* 3. Your custom image (replace URL) */
-        url('https://i.ibb.co/0VYftK7g/content.png');
+        url('../resources/content.png');
 
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
 }
 

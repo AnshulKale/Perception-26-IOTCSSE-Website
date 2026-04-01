@@ -49,7 +49,7 @@
       color: var(--white);
       font-family: 'Outfit', sans-serif;
       overflow-x: hidden;
-      cursor: none;
+      cursor: auto;
     }
 
     body::after {
